@@ -189,6 +189,11 @@ a { color: inherit; text-decoration: none; }
 .row { display: flex; align-items: center; }
 .col { display: flex; flex-direction: column; }
 .center { align-items: center; justify-content: center; }
+.illust-slot {
+  width: 240px; height: 240px; border-radius: 20px;
+  border: 1px dashed var(--line-normal);
+  display: flex; align-items: center; justify-content: center;
+}
 .logo-slot {
   width: 96px; height: 48px; border-radius: 10px;
   border: 1px dashed var(--line-strong);
