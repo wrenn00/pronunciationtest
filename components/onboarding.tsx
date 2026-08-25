@@ -49,10 +49,11 @@ export function StepShell({
 }
 
 export function OptionCard({
-  title, desc, selected, onClick,
-}: { title: string; desc?: string; selected: boolean; onClick: () => void }) {
+  title, desc, selected, onClick, icon = false,
+}: { title: string; desc?: string; selected: boolean; onClick: () => void; icon?: boolean }) {
   return (
-    <button className={`ob-option ${selected ? "on" : ""}`} onClick={onClick}>
+    <button className={`ob-option ${icon ? "has-slot" : ""} ${selected ? "on" : ""}`} onClick={onClick}>
+      {icon && <span className="ob-slot" />}
       <span className="ob-option-text">
         <span className="t-label-1-b">{title}</span>
         {desc && <span className="t-caption-1" style={{ color: "var(--label-alternative)" }}>{desc}</span>}

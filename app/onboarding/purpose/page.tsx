@@ -23,7 +23,7 @@ export default function Purpose() {
       <div className="ob-list">
         {OPTIONS.map(([t, d]) => (
           <OptionCard key={t} title={t} desc={d}
-            selected={plan.purpose === t} onClick={() => set({ purpose: t })} />
+            icon selected={plan.purpose === t} onClick={() => set({ purpose: t })} />
         ))}
       </div>
     </StepShell>
