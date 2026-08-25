@@ -10,9 +10,8 @@ const SCREENS = [
   { href: "/onboarding/focus", name: "온보딩 2 · 개선점", desc: "복수 선택, 최대 3개" },
   { href: "/onboarding/frequency", name: "온보딩 3 · 빈도", desc: "단일 선택" },
   { href: "/onboarding/style", name: "온보딩 4 · 방식", desc: "복수 선택" },
-  { href: "/onboarding/plan", name: "온보딩 5 · 계획 확인", desc: "선택값 요약, 진단 또는 홈 선택" },
-  { href: "/onboarding/check", name: "발음 진단", desc: "문장 1개 녹음, 30초 제한" },
-  { href: "/onboarding/check/result", name: "진단 결과", desc: "잘한 점과 개선점 한 개씩" },
+  { href: "/onboarding/plan", name: "온보딩 5 · 계획 확인", desc: "선택값 요약, 행별 수정" },
+  { href: "/onboarding/ready", name: "온보딩 6 · 준비 완료", desc: "홈 진입" },
   { href: "/home", name: "홈", desc: "연속 기록, 오늘의 연습, 뉴스" },
 ];
 
