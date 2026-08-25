@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Phone, SafeTop, Button } from "@/components/ui";
 import TabBar from "@/components/TabBar";
 import { Bell, Check, ArrowRight, Play } from "@/components/icons";
@@ -27,6 +28,11 @@ function Ratio({ value, rest }: { value: string; rest: string }) {
 
 export default function Home() {
   const router = useRouter();
+  const [diagnosed, setDiagnosed] = useState(true);
+  useEffect(() => {
+    try { setDiagnosed(sessionStorage.getItem("ttobak.diagnosed") === "1"); }
+    catch { setDiagnosed(false); }
+  }, []);
   return (
     <Phone>
       <SafeTop />
@@ -37,6 +43,22 @@ export default function Home() {
 
       <div className="screen scroll" style={{ background: "var(--bg-alternative)" }}>
         <div className="home-scroll">
+
+          {/* 진단을 아직 안 한 사용자 */}
+          {!diagnosed && (
+            <button className="check-card" onClick={() => router.push("/onboarding/check")}>
+              <span className="check-badge">
+                <Play size={20} color="#fff" />
+              </span>
+              <span className="col" style={{ gap: 3, flex: 1, alignItems: "flex-start" }}>
+                <span className="t-label-1-b">첫 진단 시작하기</span>
+                <span className="t-caption-1" style={{ color: "var(--label-alternative)" }}>
+                  30초면 내 수준에 맞게 난이도를 맞춰드려요
+                </span>
+              </span>
+              <ArrowRight size={20} color="var(--primary-normal)" />
+            </button>
+          )}
 
           {/* 연속 기록 */}
           <div className="card" style={{ padding: 18, display: "flex", flexDirection: "column", gap: 16 }}>
