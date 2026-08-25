@@ -22,7 +22,7 @@ export default function Frequency() {
     >
       <div className="ob-list">
         {OPTIONS.map(([t, d]) => (
-          <OptionCard key={t} title={t} desc={d} icon={false}
+          <OptionCard key={t} title={t} desc={d}
             selected={plan.frequency === t} onClick={() => set({ frequency: t })} />
         ))}
       </div>
