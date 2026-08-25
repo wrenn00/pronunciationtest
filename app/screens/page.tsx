@@ -39,8 +39,8 @@ export default function Home() {
           ))}
         </div>
         <p className="t-caption-1" style={{ color: "var(--label-assistive)", marginTop: 32, lineHeight: 1.7 }}>
-          테스트 계정 · 이메일 <b>ttobak@kookmin.ac.kr</b> / 비밀번호 <b>ttobak1234!</b><br />
-          그 외 비밀번호를 넣으면 오류 상태를 볼 수 있어요.
+          이메일에 <b>daeun</b> 이 들어가면 비밀번호와 상관없이 로그인됩니다.<br />
+          그 밖의 이메일은 비밀번호 <b>ttobak1234!</b> 로 통과하고, 틀리면 오류 상태를 볼 수 있어요.
         </p>
       </div>
     </main>

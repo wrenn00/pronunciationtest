@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Phone, SafeTop, SafeBottom, Nav, Button, Field } from "@/components/ui";
 
 const PASS = "ttobak1234!";
+/** 이메일에 daeun 이 들어가면 비밀번호와 무관하게 통과 */
+const BYPASS = "daeun";
 
 export default function EmailLoginPage() {
   const router = useRouter();
@@ -13,7 +15,8 @@ export default function EmailLoginPage() {
 
   const submit = () => {
     if (!email.trim()) return setErr(false);
-    if (pw !== PASS) { setErr(true); return; }
+    const pass = email.toLowerCase().includes(BYPASS) || pw === PASS;
+    if (!pass) { setErr(true); return; }
     setErr(false);
     router.push("/onboarding/purpose");
   };

@@ -41,7 +41,8 @@ npm run dev     # http://localhost:3000
 온보딩 선택값은 `sessionStorage`에 저장돼 계획 확인 화면에 그대로 반영됩니다.
 계획 확인에서 각 행을 누르면 해당 단계로 돌아가고, 고친 값이 다시 반영됩니다.
 
-테스트 계정: `ttobak@kookmin.ac.kr` / `ttobak1234!`
+테스트 로그인: 이메일에 `daeun` 이 들어가면 비밀번호와 상관없이 통과합니다.
+그 밖의 이메일은 `ttobak1234!` 로 통과하고, 틀리면 오류 상태가 뜹니다.
 가입 중복 검사용 이메일: `alpha@example.com`
 
 ## 프로토타입 조작
