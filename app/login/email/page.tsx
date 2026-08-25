@@ -15,7 +15,7 @@ export default function EmailLoginPage() {
     if (!email.trim()) return setErr(false);
     if (pw !== PASS) { setErr(true); return; }
     setErr(false);
-    router.push("/terms");
+    router.push("/signup/complete");
   };
 
   return (
@@ -34,9 +34,11 @@ export default function EmailLoginPage() {
         />
         <div style={{ height: 30 }} />
         <div className="row center" style={{ gap: 12 }}>
-          <span className="t-label-1-m" style={{ color: "var(--label-alternative)" }}>회원가입</span>
+          <button className="t-label-1-m" style={{ color: "var(--label-alternative)" }}
+            onClick={() => router.push("/signup")}>회원가입</button>
           <span className="sep" />
-          <span className="t-label-1-m" style={{ color: "var(--label-alternative)" }}>비밀번호 재설정</span>
+          <button className="t-label-1-m" style={{ color: "var(--label-alternative)" }}
+            onClick={() => alert("비밀번호 재설정은 프로토타입에서 생략했어요")}>비밀번호 재설정</button>
         </div>
         <div className="flex-1" />
         <Button onClick={submit}>로그인</Button>

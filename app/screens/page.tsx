@@ -3,8 +3,8 @@ import Link from "next/link";
 const SCREENS = [
   { href: "/", name: "로그인", desc: "카카오, 구글, 이메일 진입" },
   { href: "/login/email", name: "이메일 로그인", desc: "밑줄형 입력과 오류 상태" },
-  { href: "/terms", name: "약관 동의", desc: "모두 동의 연동과 필수 검증" },
   { href: "/signup", name: "가입 정보 입력", desc: "실시간 유효성 검사" },
+  { href: "/signup/terms", name: "약관 동의", desc: "모두 동의 연동과 필수 검증" },
   { href: "/signup/complete", name: "가입 완료", desc: "온보딩 진입" },
 ];
 

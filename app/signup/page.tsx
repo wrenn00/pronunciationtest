@@ -39,7 +39,7 @@ export default function SignupPage() {
   return (
     <Phone>
       <SafeTop />
-      <Nav title="회원가입" onBack={() => router.push("/terms")} />
+      <Nav title="회원가입" onBack={() => router.push("/login/email")} />
       <div className="screen body-pad scroll">
         <div style={{ height: 20 }} />
         <h1 className="t-title-3">가입 정보 입력</h1>
@@ -55,7 +55,7 @@ export default function SignupPage() {
           password state={pw2State[0]} message={pw2State[1]} />
 
         <div className="flex-1" style={{ minHeight: 40 }} />
-        <Button disabled={!valid} onClick={() => router.push("/signup/complete")}>회원가입</Button>
+        <Button disabled={!valid} onClick={() => router.push("/signup/terms")}>다음</Button>
         <div style={{ height: 24 }} />
       </div>
       <SafeBottom />
