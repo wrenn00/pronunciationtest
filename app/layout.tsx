@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import PointerLayer from "@/components/PointerLayer";
 
 export const metadata: Metadata = {
   title: "또박 · 로그인 플로우 프로토타입",
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
       </head>
-      <body>{children}</body>
+      <body>{children}<PointerLayer /></body>
     </html>
   );
 }

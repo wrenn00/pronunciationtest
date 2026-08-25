@@ -251,3 +251,27 @@ a { color: inherit; text-decoration: none; }
   width: 120px; height: 120px; border-radius: 32px;
   background: var(--fill-disabled); border: 1px dashed var(--line-strong);
 }
+
+/* ─────────── glass cursor ─────────── */
+body.has-cursor, body.has-cursor * { cursor: none !important; }
+body.dragging { user-select: none; }
+.glass-cursor {
+  position: fixed; left: 0; top: 0; z-index: 9999;
+  width: 38px; height: 38px; border-radius: 50%;
+  pointer-events: none; will-change: transform;
+  background: rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(7px) saturate(150%);
+  -webkit-backdrop-filter: blur(7px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.16),
+    inset 0 1px 1px rgba(255, 255, 255, 0.65),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.05);
+  transition: width 0.16s ease, height 0.16s ease, background 0.16s ease, opacity 0.2s ease;
+}
+.glass-cursor.press {
+  width: 28px; height: 28px;
+  background: rgba(47, 107, 255, 0.24);
+  border-color: rgba(47, 107, 255, 0.5);
+  box-shadow: 0 3px 10px rgba(47, 107, 255, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
