@@ -25,7 +25,7 @@ export default function LoginPage() {
             <span className="logo"><GoogleLogo /></span>구글로 시작하기
           </button>
           <button className="social social-email" onClick={() => router.push("/login/email")}>
-            <span className="logo"><MailFill size={20} color="var(--mail-icon)" /></span>이메일로 시작하기
+            <span className="logo"><MailFill size={20} color="var(--label-assistive)" /></span>이메일로 시작하기
           </button>
         </div>
 
