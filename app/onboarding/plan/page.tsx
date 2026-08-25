@@ -47,18 +47,18 @@ export default function PlanConfirm() {
           ))}
         </div>
 
-        <div style={{ height: 20 }} />
-        <div className="row" style={{ gap: 6, alignItems: "flex-start" }}>
-          <CircleExclamation size={15} color="var(--label-assistive)" />
-          <span className="t-caption-1" style={{ color: "var(--label-assistive)" }}>
-            첫 훈련 결과에 맞춰 목표와 난이도를 조정해 드려요
-          </span>
-        </div>
         <div className="flex-1" style={{ minHeight: 24 }} />
       </div>
 
-      <div style={{ padding: "12px 24px 24px" }}>
-        <Button onClick={() => router.push("/onboarding/ready")}>이 계획으로 시작하기</Button>
+      <div style={{ padding: "12px 24px 24px", display: "flex", flexDirection: "column", gap: 10 }}>
+        <div className="row" style={{ gap: 6, alignItems: "flex-start", paddingBottom: 2 }}>
+          <CircleExclamation size={15} color="var(--label-assistive)" />
+          <span className="t-caption-1" style={{ color: "var(--label-assistive)" }}>
+            짧은 문장을 읽으면 내 수준에 맞게 난이도를 조정해 드려요
+          </span>
+        </div>
+        <Button onClick={() => router.push("/onboarding/check")}>30초 진단 시작하기</Button>
+        <Button variant="outline" onClick={() => router.push("/home")}>홈 먼저 둘러보기</Button>
       </div>
       <SafeBottom />
     </Phone>
