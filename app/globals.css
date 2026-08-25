@@ -306,3 +306,49 @@ body.dragging { user-select: none; }
   flex: 0 0 68px; font-size: 15px; font-weight: 700;
   background: var(--primary-normal); color: #fff;
 }
+
+/* ─────────── tab bar ─────────── */
+.tabbar { flex: none; background: var(--bg-elevated); }
+.tabbar-line { height: 1px; background: var(--line-alternative); }
+.tabbar-row { display: flex; padding: 8px 0 6px; }
+.tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px;
+}
+
+/* ─────────── home ─────────── */
+.home-scroll { padding: 0 20px 24px; display: flex; flex-direction: column; gap: 20px; }
+.card {
+  background: var(--bg-elevated); border-radius: 20px;
+  box-shadow: var(--elevation-card);
+}
+.streak-days { display: flex; }
+.streak-day { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.day-dot {
+  width: 34px; height: 34px; border-radius: 17px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--fill-disabled);
+}
+.day-dot.done { background: var(--primary-normal); }
+.day-dot.today { background: var(--bg-elevated); border: 2px solid var(--primary-normal); }
+.chip {
+  display: inline-flex; align-items: center;
+  padding: 5px 10px; border-radius: 8px;
+  background: var(--primary-background); color: var(--primary-label);
+}
+.chip-new { background: var(--cautionary-bg); color: var(--cautionary-label); }
+.illust-stage {
+  height: 160px; display: flex; align-items: center; justify-content: center;
+}
+.illust-box {
+  width: 160px; height: 160px; border-radius: 20px;
+  border: 1px dashed var(--line-normal);
+  display: flex; align-items: center; justify-content: center;
+}
+.news-item { display: flex; align-items: center; gap: 12px; padding: 14px 4px 14px 0; }
+.news-divider { height: 1px; background: var(--line-alternative); }
+.play-btn {
+  width: 40px; height: 40px; border-radius: 20px; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--primary-background); padding-left: 2px;
+}
+.play-btn.solid { background: var(--primary-normal); }

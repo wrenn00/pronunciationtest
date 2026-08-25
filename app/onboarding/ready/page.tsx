@@ -19,7 +19,7 @@ export default function Ready() {
         <div className="flex-1" />
       </div>
       <div style={{ padding: "12px 24px 24px" }}>
-        <Button onClick={() => router.push("/screens")}>첫 연습 시작하기</Button>
+        <Button onClick={() => router.push("/home")}>첫 연습 시작하기</Button>
       </div>
       <SafeBottom />
     </Phone>

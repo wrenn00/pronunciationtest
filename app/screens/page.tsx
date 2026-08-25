@@ -11,7 +11,8 @@ const SCREENS = [
   { href: "/onboarding/frequency", name: "온보딩 3 · 빈도", desc: "단일 선택" },
   { href: "/onboarding/style", name: "온보딩 4 · 방식", desc: "복수 선택" },
   { href: "/onboarding/plan", name: "온보딩 5 · 계획 확인", desc: "선택값 요약, 행별 수정" },
-  { href: "/onboarding/ready", name: "온보딩 6 · 준비 완료", desc: "첫 연습 진입" },
+  { href: "/onboarding/ready", name: "온보딩 6 · 준비 완료", desc: "홈 진입" },
+  { href: "/home", name: "홈", desc: "연속 기록, 오늘의 연습, 뉴스" },
 ];
 
 export default function Home() {

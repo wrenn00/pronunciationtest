@@ -24,7 +24,9 @@ npm run dev     # http://localhost:3000
 | `/onboarding/frequency` | 온보딩 3 빈도 | 단일 선택 |
 | `/onboarding/style` | 온보딩 4 방식 | 복수 선택 |
 | `/onboarding/plan` | 온보딩 5 계획 확인 | 앞선 선택값 요약, 행을 누르면 해당 단계로 |
-| `/onboarding/ready` | 온보딩 6 준비 완료 | 첫 연습 진입 |
+| `/onboarding/ready` | 온보딩 6 준비 완료 | 홈 진입 |
+| `/home` | 홈 | 연속 기록, 오늘의 연습, 이어서 연습하기, 뉴스 목록 |
+| `/learn` `/records` `/my` | 학습, 기록, 마이 | 탭 이동 확인용 자리표시 |
 | `/screens` | 화면 목록 | 전체 화면 인덱스 |
 
 ## 플로우
@@ -35,7 +37,7 @@ npm run dev     # http://localhost:3000
  └ 이메일 로그인의 회원가입 → 가입 정보 입력 → 약관 동의 → 가입 완료 → 온보딩
 
 온보딩
- 목적 → 개선점 → 빈도 → 방식 → 계획 확인 → 준비 완료
+ 목적 → 개선점 → 빈도 → 방식 → 계획 확인 → 준비 완료 → 홈
 ```
 
 온보딩 선택값은 `sessionStorage`에 저장돼 계획 확인 화면에 그대로 반영됩니다.
