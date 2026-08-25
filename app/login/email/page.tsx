@@ -15,7 +15,7 @@ export default function EmailLoginPage() {
     if (!email.trim()) return setErr(false);
     if (pw !== PASS) { setErr(true); return; }
     setErr(false);
-    router.push("/signup/complete");
+    router.push("/onboarding/purpose");
   };
 
   return (

@@ -27,7 +27,7 @@ export default function CompletePage() {
       </div>
 
       <div style={{ padding: "0 24px 24px" }}>
-        <Button onClick={() => router.push("/")}>시작하기</Button>
+        <Button onClick={() => router.push("/onboarding/purpose")}>시작하기</Button>
       </div>
       <SafeBottom />
     </Phone>

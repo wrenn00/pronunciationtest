@@ -6,6 +6,12 @@ const SCREENS = [
   { href: "/signup", name: "가입 정보 입력", desc: "실시간 유효성 검사" },
   { href: "/signup/terms", name: "약관 동의", desc: "모두 동의 연동과 필수 검증" },
   { href: "/signup/complete", name: "가입 완료", desc: "온보딩 진입" },
+  { href: "/onboarding/purpose", name: "온보딩 1 · 목적", desc: "단일 선택" },
+  { href: "/onboarding/focus", name: "온보딩 2 · 개선점", desc: "복수 선택, 최대 3개" },
+  { href: "/onboarding/frequency", name: "온보딩 3 · 빈도", desc: "단일 선택" },
+  { href: "/onboarding/style", name: "온보딩 4 · 방식", desc: "복수 선택" },
+  { href: "/onboarding/plan", name: "온보딩 5 · 계획 확인", desc: "선택값 요약, 행별 수정" },
+  { href: "/onboarding/ready", name: "온보딩 6 · 준비 완료", desc: "첫 연습 진입" },
 ];
 
 export default function Home() {
