@@ -27,7 +27,7 @@ export default function EmailLoginPage() {
         <Field label="이메일" value={email} onChange={(v) => { setEmail(v); setErr(false); }} clearable autoFocus />
         <div style={{ height: 28 }} />
         <Field
-          label="비밀번호" value={pw} password clearable
+          label="비밀번호" value={pw} password
           onChange={(v) => { setPw(v); setErr(false); }}
           state={err ? "error" : "none"}
           message={err ? "비밀번호가 일치하지 않아요. 다시 입력해 주세요." : undefined}
