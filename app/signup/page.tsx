@@ -46,7 +46,7 @@ export default function SignupPage() {
         <div style={{ height: 34 }} />
 
         <Field label="이메일" placeholder="이메일을 입력해 주세요" value={email} onChange={setEmail}
-          clearable state={emailState[0]} message={emailState[1]} autoFocus />
+          state={emailState[0]} message={emailState[1]} autoFocus />
         <div style={{ height: 26 }} />
         <Field label="비밀번호" placeholder="비밀번호를 입력해 주세요" value={pw} onChange={setPw}
           password state={pwState[0]} message={pwState[1]} />

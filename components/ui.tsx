@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronLeft, Close, Eye, EyeOff, CircleCheck, CircleExclamation, Check } from "./icons";
+import { ChevronLeft, CircleCheck, CircleExclamation, Check } from "./icons";
 import Keyboard from "./Keyboard";
 
 /* ── 화면 프레임 (393 × 852, 뷰포트에 맞춰 축소) ── */
@@ -56,15 +56,14 @@ export function Button({
 
 type FieldProps = {
   label: string; value: string; onChange: (v: string) => void;
-  placeholder?: string; password?: boolean; clearable?: boolean;
+  placeholder?: string; password?: boolean;
   state?: "none" | "error" | "ok"; message?: string; autoFocus?: boolean;
 };
 
 export function Field({
-  label, value, onChange, placeholder, password, clearable, state = "none", message, autoFocus,
+  label, value, onChange, placeholder, password, state = "none", message, autoFocus,
 }: FieldProps) {
   const [focus, setFocus] = useState(false);
-  const [reveal, setReveal] = useState(false);
   const cls = ["field", focus && state === "none" ? "is-focus" : "",
     state === "error" ? "is-error" : "", state === "ok" ? "is-ok" : ""].join(" ");
   return (
@@ -73,20 +72,10 @@ export function Field({
       <div className="field-row">
         <input
           value={value} placeholder={placeholder}
-          type={password && !reveal ? "password" : "text"} autoFocus={autoFocus}
+          type={password ? "password" : "text"} autoFocus={autoFocus}
           onFocus={() => setFocus(true)} onBlur={() => setFocus(false)}
           onChange={(e) => onChange(e.target.value)}
         />
-        {clearable && value && (
-          <button className="clear-btn" aria-label="지우기" onMouseDown={(e) => e.preventDefault()} onClick={() => onChange("")}>
-            <Close size={12} color="#fff" />
-          </button>
-        )}
-        {password && (
-          <button className="icon-btn" aria-label="비밀번호 표시" onMouseDown={(e) => e.preventDefault()} onClick={() => setReveal((r) => !r)}>
-            {reveal ? <Eye size={20} color="var(--label-assistive)" /> : <EyeOff size={20} color="var(--label-assistive)" />}
-          </button>
-        )}
       </div>
       <div className="field-line" />
       {message && (

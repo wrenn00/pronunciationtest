@@ -24,7 +24,7 @@ export default function EmailLoginPage() {
       <Nav title="로그인" onBack={() => router.push("/login")} />
       <div className="screen body-pad">
         <div style={{ height: 34 }} />
-        <Field label="이메일" value={email} onChange={(v) => { setEmail(v); setErr(false); }} clearable autoFocus />
+        <Field label="이메일" value={email} onChange={(v) => { setEmail(v); setErr(false); }} autoFocus />
         <div style={{ height: 28 }} />
         <Field
           label="비밀번호" value={pw} password
