@@ -5,11 +5,11 @@ import { Phone, SafeTop, SafeBottom, Button } from "./ui";
 import { ChevronLeft, Check } from "./icons";
 
 export function StepShell({
-  step, title, sub, children, cta, ctaDisabled, onNext, onBack, skip = true, note,
+  step, title, sub, children, cta, ctaDisabled, onNext, onBack, note,
 }: {
   step: number; title: ReactNode; sub?: string; children: ReactNode;
   cta: string; ctaDisabled?: boolean; onNext: () => void; onBack?: () => void;
-  skip?: boolean; note?: ReactNode;
+  note?: ReactNode;
 }) {
   const router = useRouter();
   return (
@@ -24,10 +24,7 @@ export function StepShell({
             <span key={i} className={`ob-seg ${i <= step ? "on" : ""}`} />
           ))}
         </div>
-        {skip
-          ? <button className="t-caption-1" style={{ color: "var(--label-assistive)" }}
-              onClick={() => router.push("/onboarding/ready")}>건너뛰기</button>
-          : <span style={{ width: 4 }} />}
+        <span style={{ width: 4 }} />
       </div>
 
       <div className="screen body-pad scroll">
