@@ -275,3 +275,34 @@ body.dragging { user-select: none; }
   border-color: rgba(47, 107, 255, 0.5);
   box-shadow: 0 3px 10px rgba(47, 107, 255, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.5);
 }
+
+/* ─────────── on-screen keyboard ─────────── */
+.phone.kb-open { padding-bottom: 268px; }
+.keyboard {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 30;
+  height: 268px; padding: 8px 3px 26px;
+  background: #D1D5DB;
+  display: flex; flex-direction: column; gap: 10px;
+  animation: kb-up 0.22s cubic-bezier(0.32, 0.72, 0, 1);
+}
+@keyframes kb-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.kb-row { display: flex; gap: 6px; justify-content: center; }
+.kb-row-2 { padding: 0 20px; }
+.kb-row-last { padding-top: 2px; }
+.kb-key {
+  flex: 1; height: 44px; border-radius: 6px;
+  background: #FFFFFF; color: #191F28;
+  font-size: 21px; line-height: 1; font-weight: 400;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
+}
+.kb-key:active { background: #E5E8EB; }
+.kb-fn { background: #ADB3BC; font-size: 17px; flex: 0 0 40px; }
+.kb-fn.on { background: #FFFFFF; }
+.kb-num { flex: 0 0 46px; font-size: 15px; }
+.kb-at { flex: 0 0 40px; font-size: 19px; }
+.kb-space { flex: 1; font-size: 14px; color: var(--label-alternative); }
+.kb-done {
+  flex: 0 0 68px; font-size: 15px; font-weight: 700;
+  background: var(--primary-normal); color: #fff;
+}

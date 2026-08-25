@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft, Close, Eye, EyeOff, CircleCheck, CircleExclamation, Check } from "./icons";
+import Keyboard from "./Keyboard";
 
 /* ── 화면 프레임 (393 × 852, 뷰포트에 맞춰 축소) ── */
 export function Phone({ children }: { children: ReactNode }) {
@@ -22,7 +23,7 @@ export function Phone({ children }: { children: ReactNode }) {
     <div className="stage">
       <div className={full ? "device device-full" : "device"}
         style={full ? undefined : { transform: `scale(${scale})` }}>
-        <div className="phone">{children}</div>
+        <div className="phone">{children}<Keyboard /></div>
       </div>
       {!full && <Link href="/screens" className="screens-link t-caption-1">화면 목록</Link>}
     </div>
