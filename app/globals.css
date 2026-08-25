@@ -236,7 +236,6 @@ a { color: inherit; text-decoration: none; }
 }
 .ob-check.on { background: var(--primary-selected); border-color: var(--primary-selected); }
 
-.ob-counter { display: flex; align-items: center; gap: 7px; padding-bottom: 12px; }
 
 /* 계획 확인 */
 .plan-row {

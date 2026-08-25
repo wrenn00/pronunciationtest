@@ -17,7 +17,6 @@ export default function Focus() {
     if (!on && plan.focus.length >= MAX) return;
     set({ focus: on ? plan.focus.filter((x) => x !== t) : [...plan.focus, t] });
   };
-  const full = plan.focus.length >= MAX;
   return (
     <StepShell
       step={2} title="어떤 점을 개선하고 싶나요?" sub={`가장 신경 쓰이는 항목을 최대 ${MAX}개 골라주세요.`}
@@ -25,15 +24,6 @@ export default function Focus() {
       onBack={() => router.push("/onboarding/purpose")}
       onNext={() => router.push("/onboarding/frequency")}
     >
-      <div className="ob-counter">
-        <span className="t-caption-1-b" style={{ color: "var(--primary-label)" }}>
-          {plan.focus.length}개 선택했어요
-        </span>
-        <span className="sep" />
-        <span className="t-caption-1" style={{ color: full ? "var(--cautionary-label)" : "var(--label-alternative)" }}>
-          {full ? "최대 3개까지 고를 수 있어요" : `최대 ${MAX}개`}
-        </span>
-      </div>
       <div className="ob-list">
         {OPTIONS.map((t) => (
           <OptionCard key={t} title={t} selected={plan.focus.includes(t)} onClick={() => toggle(t)} />

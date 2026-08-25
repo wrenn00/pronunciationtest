@@ -20,7 +20,7 @@ npm run dev     # http://localhost:3000
 | `/signup/terms` | 약관 동의 | 모두 동의 연동, 필수 3개 충족 시 CTA 활성화 |
 | `/signup/complete` | 가입 완료 | — |
 | `/onboarding/purpose` | 온보딩 1 목적 | 단일 선택 |
-| `/onboarding/focus` | 온보딩 2 개선점 | 복수 선택, 최대 3개 제한과 카운터 |
+| `/onboarding/focus` | 온보딩 2 개선점 | 복수 선택, 최대 3개 제한 |
 | `/onboarding/frequency` | 온보딩 3 빈도 | 단일 선택 |
 | `/onboarding/style` | 온보딩 4 방식 | 복수 선택 |
 | `/onboarding/plan` | 온보딩 5 계획 확인 | 앞선 선택값 요약, 행을 누르면 해당 단계로 |
