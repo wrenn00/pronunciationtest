@@ -58,7 +58,7 @@ export default function PlanConfirm() {
           </span>
         </div>
         <Button onClick={() => router.push("/onboarding/check")}>30초 진단 시작하기</Button>
-        <Button variant="outline" onClick={() => router.push("/home")}>홈 먼저 둘러보기</Button>
+        <button className="skip-link t-label-1-m" onClick={() => router.push("/home")}>건너뛰기</button>
       </div>
       <SafeBottom />
     </Phone>
