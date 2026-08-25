@@ -1,0 +1,42 @@
+import Link from "next/link";
+
+const SCREENS = [
+  { href: "/", name: "로그인", desc: "카카오, 구글, 이메일 진입" },
+  { href: "/login/email", name: "이메일 로그인", desc: "밑줄형 입력과 오류 상태" },
+  { href: "/terms", name: "약관 동의", desc: "모두 동의 연동과 필수 검증" },
+  { href: "/signup", name: "가입 정보 입력", desc: "실시간 유효성 검사" },
+  { href: "/signup/complete", name: "가입 완료", desc: "온보딩 진입" },
+];
+
+export default function Home() {
+  return (
+    <main style={{ minHeight: "100dvh", background: "#FAFBFC", padding: "56px 24px" }}>
+      <div style={{ maxWidth: 560, margin: "0 auto" }}>
+        <h1 className="t-title-2" style={{ marginBottom: 8 }}>또박 인증 플로우</h1>
+        <p className="t-body-1" style={{ color: "var(--label-alternative)", marginBottom: 40 }}>
+          Figma 디자인 시스템 토큰을 그대로 옮긴 프로토타입입니다. 화면을 눌러 인터랙션을 확인하세요.
+        </p>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {SCREENS.map((s) => (
+            <Link key={s.href} href={s.href}
+              style={{
+                display: "flex", alignItems: "center", justifyContent: "space-between",
+                background: "#fff", border: "1px solid var(--line-normal)",
+                borderRadius: 16, padding: "18px 20px",
+              }}>
+              <span>
+                <span className="t-body-1-b" style={{ display: "block" }}>{s.name}</span>
+                <span className="t-caption-1" style={{ color: "var(--label-alternative)" }}>{s.desc}</span>
+              </span>
+              <span className="t-label-1-m" style={{ color: "var(--primary-normal)" }}>열기</span>
+            </Link>
+          ))}
+        </div>
+        <p className="t-caption-1" style={{ color: "var(--label-assistive)", marginTop: 32, lineHeight: 1.7 }}>
+          테스트 계정 · 이메일 <b>ttobak@kookmin.ac.kr</b> / 비밀번호 <b>ttobak1234!</b><br />
+          그 외 비밀번호를 넣으면 오류 상태를 볼 수 있어요.
+        </p>
+      </div>
+    </main>
+  );
+}

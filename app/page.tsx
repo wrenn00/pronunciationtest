@@ -1,42 +1,38 @@
-import Link from "next/link";
+"use client";
+import { useRouter } from "next/navigation";
+import { Phone, SafeTop, SafeBottom } from "@/components/ui";
+import { KakaoLogo, GoogleLogo, MailFill } from "@/components/icons";
 
-const SCREENS = [
-  { href: "/login", name: "로그인", desc: "카카오 · 구글 · 이메일 진입" },
-  { href: "/login/email", name: "이메일 로그인", desc: "밑줄형 입력, 오류 상태" },
-  { href: "/terms", name: "약관 동의", desc: "모두 동의 연동, 필수 검증" },
-  { href: "/signup", name: "가입 정보 입력", desc: "실시간 유효성 검사" },
-  { href: "/signup/complete", name: "가입 완료", desc: "온보딩 진입" },
-];
-
-export default function Home() {
+export default function LoginPage() {
+  const router = useRouter();
   return (
-    <main style={{ minHeight: "100dvh", background: "#FAFBFC", padding: "56px 24px" }}>
-      <div style={{ maxWidth: 560, margin: "0 auto" }}>
-        <h1 className="t-title-2" style={{ marginBottom: 8 }}>또박 인증 플로우</h1>
-        <p className="t-body-1" style={{ color: "var(--label-alternative)", marginBottom: 40 }}>
-          Figma 디자인 시스템 토큰을 그대로 옮긴 프로토타입입니다. 화면을 눌러 인터랙션을 확인하세요.
+    <Phone>
+      <SafeTop />
+      <div className="screen body-pad" style={{ alignItems: "center" }}>
+        <div style={{ height: 150 }} />
+        <div className="logo-slot">LOGO</div>
+        <div style={{ height: 14 }} />
+        <p className="t-body-1" style={{ color: "var(--label-alternative)", fontWeight: 500 }}>
+          말하는 순간이 편해지도록
         </p>
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          {SCREENS.map((s) => (
-            <Link key={s.href} href={s.href}
-              style={{
-                display: "flex", alignItems: "center", justifyContent: "space-between",
-                background: "#fff", border: "1px solid var(--line-normal)",
-                borderRadius: 16, padding: "18px 20px",
-              }}>
-              <span>
-                <span className="t-body-1-b" style={{ display: "block" }}>{s.name}</span>
-                <span className="t-caption-1" style={{ color: "var(--label-alternative)" }}>{s.desc}</span>
-              </span>
-              <span className="t-label-1-m" style={{ color: "var(--primary-normal)" }}>열기</span>
-            </Link>
-          ))}
+        <div style={{ height: 96 }} />
+
+        <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 10 }}>
+          <button className="social social-kakao" onClick={() => alert("카카오 로그인은 프로토타입에서 생략했어요")}>
+            <span className="logo"><KakaoLogo /></span>카카오로 시작하기
+          </button>
+          <button className="social social-google" onClick={() => alert("구글 로그인은 프로토타입에서 생략했어요")}>
+            <span className="logo"><GoogleLogo /></span>구글로 시작하기
+          </button>
+          <button className="social social-email" onClick={() => router.push("/login/email")}>
+            <span className="logo"><MailFill size={20} color="var(--label-normal)" /></span>이메일로 시작하기
+          </button>
         </div>
-        <p className="t-caption-1" style={{ color: "var(--label-assistive)", marginTop: 32, lineHeight: 1.7 }}>
-          테스트 계정 · 이메일 <b>ttobak@kookmin.ac.kr</b> / 비밀번호 <b>ttobak1234!</b><br />
-          그 외 비밀번호를 넣으면 오류 상태를 볼 수 있어요.
-        </p>
+
+        <div style={{ height: 28 }} />
+        <p className="t-caption-1" style={{ color: "var(--label-assistive)" }}>로그인에 문제가 있으신가요?</p>
       </div>
-    </main>
+      <SafeBottom />
+    </Phone>
   );
 }

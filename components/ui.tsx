@@ -1,10 +1,32 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import Link from "next/link";
 import { ChevronLeft, Close, Eye, EyeOff, CircleCheck, CircleExclamation, Check } from "./icons";
 
+/* ── 화면 프레임 (393 × 852, 뷰포트에 맞춰 축소) ── */
 export function Phone({ children }: { children: ReactNode }) {
-  return <div className="stage"><div className="phone">{children}</div></div>;
+  const [scale, setScale] = useState(1);
+  useEffect(() => {
+    const fit = () => {
+      const w = window.innerWidth, h = window.innerHeight;
+      if (w <= 520) { setScale(0); return; }
+      setScale(Math.min(1, (h - 48) / 852, (w - 48) / 393));
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, []);
+  const full = scale === 0;
+  return (
+    <div className="stage">
+      <div className={full ? "device device-full" : "device"}
+        style={full ? undefined : { transform: `scale(${scale})` }}>
+        <div className="phone">{children}</div>
+      </div>
+      {!full && <Link href="/screens" className="screens-link t-caption-1">화면 목록</Link>}
+    </div>
+  );
 }
 
 export function SafeTop() { return <div className="safe-top" />; }
@@ -27,27 +49,18 @@ export function Button({
   children, onClick, disabled, variant = "solid",
 }: { children: ReactNode; onClick?: () => void; disabled?: boolean; variant?: "solid" | "outline" }) {
   return (
-    <button className={`btn btn-${variant}`} onClick={onClick} disabled={disabled}>
-      {children}
-    </button>
+    <button className={`btn btn-${variant}`} onClick={onClick} disabled={disabled}>{children}</button>
   );
 }
 
 type FieldProps = {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  placeholder?: string;
-  password?: boolean;
-  clearable?: boolean;
-  state?: "none" | "error" | "ok";
-  message?: string;
-  autoFocus?: boolean;
+  label: string; value: string; onChange: (v: string) => void;
+  placeholder?: string; password?: boolean; clearable?: boolean;
+  state?: "none" | "error" | "ok"; message?: string; autoFocus?: boolean;
 };
 
 export function Field({
-  label, value, onChange, placeholder, password, clearable,
-  state = "none", message, autoFocus,
+  label, value, onChange, placeholder, password, clearable, state = "none", message, autoFocus,
 }: FieldProps) {
   const [focus, setFocus] = useState(false);
   const [reveal, setReveal] = useState(false);
@@ -58,12 +71,9 @@ export function Field({
       <div className="field-label">{label}</div>
       <div className="field-row">
         <input
-          value={value}
-          placeholder={placeholder}
-          type={password && !reveal ? "password" : "text"}
-          autoFocus={autoFocus}
-          onFocus={() => setFocus(true)}
-          onBlur={() => setFocus(false)}
+          value={value} placeholder={placeholder}
+          type={password && !reveal ? "password" : "text"} autoFocus={autoFocus}
+          onFocus={() => setFocus(true)} onBlur={() => setFocus(false)}
           onChange={(e) => onChange(e.target.value)}
         />
         {clearable && value && (
@@ -93,7 +103,7 @@ export function Field({
 export function Checkbox({ on, size = 24 }: { on: boolean; size?: number }) {
   return (
     <div className={`cbox ${on ? "cbox-on" : "cbox-off"}`} style={{ width: size, height: size, borderRadius: size / 3 }}>
-      <Check size={size * 0.62} color={on ? "#fff" : "#FFFFFF"} />
+      <Check size={size * 0.62} color="#fff" />
     </div>
   );
 }
