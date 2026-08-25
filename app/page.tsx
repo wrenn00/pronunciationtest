@@ -29,8 +29,6 @@ export default function LoginPage() {
           </button>
         </div>
 
-        <div style={{ height: 28 }} />
-        <p className="t-caption-1" style={{ color: "var(--label-assistive)" }}>로그인에 문제가 있으신가요?</p>
       </div>
       <SafeBottom />
     </Phone>
