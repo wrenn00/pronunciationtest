@@ -4,10 +4,10 @@ import { StepShell, OptionCard } from "@/components/onboarding";
 import { usePlan } from "../store";
 
 const OPTIONS = [
-  ["아나운서, 방송 준비", "정확한 발음과 자연스러운 낭독 연습"],
-  ["면접, 발표 준비", "또렷한 전달력과 자신감 키우기"],
-  ["발음을 더 또렷하게", "어려운 자음과 모음 집중 연습"],
-  ["일상에서 자연스럽게 말하기", "부담 없이 꾸준히 말하기 연습"],
+  ["아나운서, 방송 준비", "정확한 발음과 자연스러운 낭독 연습", "/onboarding/broadcast.png"],
+  ["면접, 발표 준비", "또렷한 전달력과 자신감 키우기", "/onboarding/interview.png"],
+  ["발음을 더 또렷하게", "어려운 자음과 모음 집중 연습", "/onboarding/articulate.png"],
+  ["일상에서 자연스럽게 말하기", "부담 없이 꾸준히 말하기 연습", "/onboarding/daily.png"],
 ];
 
 export default function Purpose() {
@@ -21,9 +21,9 @@ export default function Purpose() {
       onNext={() => router.push("/onboarding/focus")}
     >
       <div className="ob-list">
-        {OPTIONS.map(([t, d]) => (
-          <OptionCard key={t} title={t} desc={d}
-            icon selected={plan.purpose === t} onClick={() => set({ purpose: t })} />
+        {OPTIONS.map(([t, d, ic]) => (
+          <OptionCard key={t} title={t} desc={d} icon={ic}
+            selected={plan.purpose === t} onClick={() => set({ purpose: t })} />
         ))}
       </div>
     </StepShell>

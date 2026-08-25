@@ -19,7 +19,7 @@ npm run dev     # http://localhost:3000
 | `/signup` | 가입 정보 입력 | 실시간 유효성 검사(형식, 중복, 규칙, 일치), 비밀번호 표시 토글 |
 | `/signup/terms` | 약관 동의 | 모두 동의 연동, 필수 3개 충족 시 CTA 활성화 |
 | `/signup/complete` | 가입 완료 | — |
-| `/onboarding/purpose` | 온보딩 1 목적 | 단일 선택 |
+| `/onboarding/purpose` | 온보딩 1 목적 | 단일 선택, Figma에서 내려받은 그래픽 아이콘 |
 | `/onboarding/focus` | 온보딩 2 개선점 | 복수 선택, 최대 3개 제한 |
 | `/onboarding/frequency` | 온보딩 3 빈도 | 단일 선택 |
 | `/onboarding/style` | 온보딩 4 방식 | 복수 선택 |
@@ -69,6 +69,11 @@ npm run dev     # http://localhost:3000
 | `--positive-normal` | `status/positive/normal` | `#028450` |
 
 타이포는 `.t-*` 클래스가 `alpha/*` 텍스트 스타일과 대응합니다 (크기·행간·자간 동일).
+
+## 에셋
+
+`public/onboarding/` 의 PNG 4개는 Figma `08 Onboarding · 01 목적` 의 아이콘을 4배(140×140)로 내보낸 것입니다.
+Figma에서 아이콘을 바꾸면 같은 노드를 다시 내보내 교체하면 됩니다.
 
 ## 구조
 
