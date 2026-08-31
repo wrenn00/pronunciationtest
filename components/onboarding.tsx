@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Phone, SafeTop, SafeBottom, Button } from "./ui";
 import { ChevronLeft, Check } from "./icons";
 
@@ -19,11 +19,7 @@ export function StepShell({
         <button aria-label="뒤로" onClick={onBack ?? (() => router.back())} style={{ display: "flex" }}>
           <ChevronLeft size={24} color="var(--label-normal)" />
         </button>
-        <div className="ob-progress">
-          {[1, 2, 3, 4, 5].map((i) => (
-            <span key={i} className={`ob-dot ${i < step ? "done" : i === step ? "current" : ""}`} />
-          ))}
-        </div>
+        <Progress step={step} />
         <span style={{ width: 4 }} />
       </div>
 
@@ -45,6 +41,32 @@ export function StepShell({
       </div>
       <SafeBottom />
     </Phone>
+  );
+}
+
+export function Progress({ step, total = 5 }: { step: number; total?: number }) {
+  const [dots, setDots] = useState(false);
+  useEffect(() => {
+    try { setDots(new URLSearchParams(window.location.search).get("bar") === "dot"); } catch {}
+  }, []);
+  if (dots) {
+    return (
+      <div className="ob-progress">
+        {Array.from({ length: total }, (_, k) => k + 1).map((i) => (
+          <span key={i} className={`ob-dot ${i < step ? "done" : i === step ? "current" : ""}`} />
+        ))}
+      </div>
+    );
+  }
+  return (
+    <div className="ob-progress">
+      <span className="ob-track">
+        <span className="ob-fill" style={{ width: `${(step / total) * 100}%` }} />
+      </span>
+      <span className="ob-step t-caption-1">
+        <b>{step}</b>/{total}
+      </span>
+    </div>
   );
 }
 

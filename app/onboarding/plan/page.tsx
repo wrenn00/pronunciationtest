@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { Phone, SafeTop, SafeBottom, Button } from "@/components/ui";
 import { ChevronLeft, ArrowRight, CircleExclamation } from "@/components/icons";
+import { Progress } from "@/components/onboarding";
 import { usePlan } from "../store";
 
 export default function PlanConfirm() {
@@ -20,11 +21,7 @@ export default function PlanConfirm() {
         <button aria-label="뒤로" onClick={() => router.push("/onboarding/style")} style={{ display: "flex" }}>
           <ChevronLeft size={24} color="var(--label-normal)" />
         </button>
-        <div className="ob-progress">
-          {[1, 2, 3, 4, 5].map((i) => (
-            <span key={i} className={`ob-dot ${i < 5 ? "done" : "current"}`} />
-          ))}
-        </div>
+        <Progress step={5} />
         <span style={{ width: 4 }} />
       </div>
 
