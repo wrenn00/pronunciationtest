@@ -21,7 +21,7 @@ export function StepShell({
         </button>
         <div className="ob-progress">
           {[1, 2, 3, 4, 5].map((i) => (
-            <span key={i} className={`ob-seg ${i <= step ? "on" : ""}`} />
+            <span key={i} className={`ob-dot ${i < step ? "done" : i === step ? "current" : ""}`} />
           ))}
         </div>
         <span style={{ width: 4 }} />

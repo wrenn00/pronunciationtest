@@ -21,7 +21,9 @@ export default function PlanConfirm() {
           <ChevronLeft size={24} color="var(--label-normal)" />
         </button>
         <div className="ob-progress">
-          {[1, 2, 3, 4, 5].map((i) => <span key={i} className="ob-seg on" />)}
+          {[1, 2, 3, 4, 5].map((i) => (
+            <span key={i} className={`ob-dot ${i < 5 ? "done" : "current"}`} />
+          ))}
         </div>
         <span style={{ width: 4 }} />
       </div>
