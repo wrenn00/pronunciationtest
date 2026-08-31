@@ -20,7 +20,7 @@ export function StepShell({
           <ChevronLeft size={24} color="var(--label-normal)" />
         </button>
         <Progress step={step} />
-        <span style={{ width: 4 }} />
+        <span style={{ width: 24, flex: "none" }} />
       </div>
 
       <div className="screen body-pad scroll">

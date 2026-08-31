@@ -22,7 +22,7 @@ export default function PlanConfirm() {
           <ChevronLeft size={24} color="var(--label-normal)" />
         </button>
         <Progress step={5} />
-        <span style={{ width: 4 }} />
+        <span style={{ width: 24, flex: "none" }} />
       </div>
 
       <div className="screen body-pad scroll">
